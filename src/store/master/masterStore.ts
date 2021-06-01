@@ -8,11 +8,11 @@ import {
 import { noChangeReducer } from '../common/common';
 
 interface MasterState extends Loadable {
-  data: Master[];
+  masters: Master[];
 }
 
 const masterInitialState: MasterState = {
-  data: [],
+  masters: [],
 };
 
 export const masterStore = createSlice({
@@ -29,7 +29,7 @@ export const masterStore = createSlice({
       state: MasterState,
       { payload }: PayloadAction<Master[]>
     ): MasterState => {
-      return { ...state, data: payload };
+      return { ...state, masters: payload };
     },
     loadMasterError: (
       _state: MasterState,
