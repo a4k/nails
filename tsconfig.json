@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "esnext",
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "sourceMap": true,
     "outDir": "./build",
     "rootDir": "./src",
@@ -29,7 +29,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "downlevelIteration": true,
+    "downlevelIteration": true
   },
   "include": [
     "src"

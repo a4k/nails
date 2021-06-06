@@ -1,3 +1,1 @@
-interface Window {
-  INITIAL_REDUX_STATE: any;
-}
+/// <reference types="react-scripts" />

@@ -16,7 +16,7 @@ const masterInitialState: MasterState = {
 };
 
 export const masterStore = createSlice({
-  name: 'System',
+  name: 'Master',
   initialState: masterInitialState,
   reducers: {
     refresh: noChangeReducer,

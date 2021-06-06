@@ -1,0 +1,20 @@
+@import '../../variables';
+
+.item {
+  background: $gray06;
+  width: 74px;
+  height: 30px;
+  border-radius: 100px;
+  margin-right: 16px;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 30px;
+  color: $purple;
+  margin-bottom: 16px;
+  &:hover {
+    background: linear-gradient(91.97deg, #D754BB 4.3%, #3385B6 100.37%);
+    color: white;
+  }
+}

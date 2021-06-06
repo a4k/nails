@@ -5,7 +5,7 @@ module.exports = {
       jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   env: {
     browser: true,
@@ -19,15 +19,20 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   rules: {
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/prop-types': 'off',
     'arrow-parens': [2, 'as-needed'],
-    'no-bitwise': ['error', {allow: ['~'] }],
-    'no-plusplus': [2, {allowForLoopAfterthoughts: true}],
+    'no-bitwise': ['error', { allow: ['~'] }],
+    'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
-    'react/jsx-wrap-multilines': ['error', {declaration: false, assignment: false}],
+    'react/jsx-wrap-multilines': [
+      'error',
+      { declaration: false, assignment: false },
+    ],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     'react/jsx-filename-extension': [
@@ -59,7 +64,7 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'src/']
+        moduleDirectory: ['node_modules', 'src/'],
       },
     },
   },
@@ -70,8 +75,8 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         'react/prefer-stateless-function': 'warn',
-        'react/require-default-props': 'warn'
-      }
-    }
-  ]
+        'react/require-default-props': 'warn',
+      },
+    },
+  ],
 };

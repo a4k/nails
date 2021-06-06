@@ -1,0 +1,31 @@
+@import '../../variables';
+
+.wrapper {
+  padding: 0 16px;
+}
+
+.search {
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  background: $gray;
+  border: 1px solid #E8E8E8;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  padding-left: 16px;
+  border-radius: 100px;
+}
+
+.changeDateBtn {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: $purple;
+  line-height: 24px;
+  font-family: $interFont;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}

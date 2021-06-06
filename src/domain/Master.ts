@@ -1,10 +1,5 @@
-export interface MasterCalendar {
-  id: number;
-  date: string;
-  timeFrom: string;
-  timeTo: string;
-  master: number;
-}
+import { Service } from './Service';
+import { MasterCalendar } from './MasterCalendar';
 
 export interface Master {
   id: number;
@@ -13,4 +8,5 @@ export interface Master {
   image: string;
   description: string;
   calendar: MasterCalendar[];
+  services: Service[];
 }

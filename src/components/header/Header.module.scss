@@ -1,0 +1,24 @@
+@import '../../variables';
+
+.header {
+  height: 36px;
+  padding: 16px 16px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  line-height: 36px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.link {
+  color: $purple;
+  text-decoration: none;
+  &:hover {
+    opacity: .7;
+  }
+}
