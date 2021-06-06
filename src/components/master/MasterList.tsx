@@ -10,7 +10,7 @@ export function MasterList() {
   const { masters } = useAppSelector(state => state.master);
 
   useEffect(() => {
-    dispatch(masterStore.actions.refresh()); // get masters
+    dispatch(masterStore.actions.getMasterList()); // get masters
   }, [dispatch]);
 
   return (

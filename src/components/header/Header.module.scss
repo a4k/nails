@@ -10,6 +10,17 @@
   line-height: 36px;
 }
 
+.gradient {
+  background: linear-gradient(97.41deg, rgba(203, 30, 165, 0.76) 13.92%, #9BFFF9 112.03%);
+  padding-bottom: 105px;
+  .link {
+    color: white;
+  }
+  .heading {
+    color: white;
+  }
+}
+
 .heading {
   font-size: 24px;
   font-weight: 600;

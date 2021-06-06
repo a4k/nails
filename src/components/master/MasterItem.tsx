@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 import { Master } from '../../domain/Master';
 import css from './MasterItem.module.scss';
 import { MasterCalendarComponent } from './MasterCalendar';
@@ -7,12 +8,20 @@ interface MasterItemProps {
 }
 
 export function MasterItem({ master }: MasterItemProps) {
+  const page = `/masters/${master.id}`;
+  const history = useHistory();
+
+  const goToMaster = () => {
+    history.push(page);
+  };
+
   return (
     <div className={css.item}>
       <div className={css.info}>
         <div className={css.avatar} />
         <div className={css.right}>
-          <div className={css.top}>
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+          <div className={css.top} onMouseDown={goToMaster}>
             <div className={css.title}>{master.name}</div>
             <div className={css.date}>Сегодня</div>
           </div>

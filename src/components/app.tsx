@@ -1,17 +1,16 @@
 import { Switch, Route } from 'react-router-dom';
 
-import { Header } from './common/header';
 import { MasterList } from './master/MasterList';
+import { MasterDetail } from './master/MasterDetail';
 
 export function App() {
   return (
     <div>
-      <Header />
       <Switch>
-        <Route path="/">
-          <MasterList />
+        <Route path="/masters/:id">
+          <MasterDetail />
         </Route>
-        <Route path="/master/:masterId">
+        <Route path="/">
           <MasterList />
         </Route>
       </Switch>

@@ -1,17 +1,21 @@
-import { call, put } from 'typed-redux-saga';
+import { call, put, select } from 'typed-redux-saga';
 import { callApi } from '../../../utils/api';
 import { API_URL } from '../../../config';
 import { masterStore } from '../../../store/master/masterStore';
+import { AppState } from '../../../store/appStore';
 
 export function* loadMasterSaga() {
-  yield* put(masterStore.actions.loadMasterRequest());
+  const { masterId } = yield* select((state: AppState) => state.master);
 
-  try {
-    // To call async functions, use redux-saga's `call()`.
-    const res = yield* call(callApi, 'get', API_URL, '/masters');
+  if (masterId) {
+    yield* put(masterStore.actions.loadMasterRequest());
 
-    yield* put(masterStore.actions.loadMasterSuccess(res));
-  } catch (err) {
-    yield* put(masterStore.actions.loadMasterError(err));
+    try {
+      const res = yield* call(callApi, 'get', API_URL, `/masters/${masterId}`);
+
+      yield* put(masterStore.actions.loadMasterSuccess(res));
+    } catch (err) {
+      yield* put(masterStore.actions.loadMasterError(err));
+    }
   }
 }

@@ -20,6 +20,7 @@ module.exports = {
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/prop-types': 'off',
     'arrow-parens': [2, 'as-needed'],
@@ -75,7 +76,7 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         'react/prefer-stateless-function': 'warn',
-        'react/require-default-props': 'warn',
+        'react/require-default-props': 'off',
       },
     },
   ],

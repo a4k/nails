@@ -9,6 +9,8 @@ import { noChangeReducer } from '../common/common';
 
 interface MasterState extends Loadable {
   masters: Master[];
+  master?: Master;
+  masterId?: number;
 }
 
 const masterInitialState: MasterState = {
@@ -19,13 +21,19 @@ export const masterStore = createSlice({
   name: 'Master',
   initialState: masterInitialState,
   reducers: {
-    refresh: noChangeReducer,
+    getMasterList: noChangeReducer,
+    getMaster: (
+      state: MasterState,
+      { payload }: PayloadAction<number>
+    ): MasterState => {
+      return { ...state, masterId: payload };
+    },
     loadMasterRequest: (_state: MasterState): MasterState => {
       const newState = { ...masterInitialState };
       requestLoadableReducer(newState);
       return newState;
     },
-    loadMasterSuccess: (
+    loadMasterListSuccess: (
       state: MasterState,
       { payload }: PayloadAction<Master[]>
     ): MasterState => {
@@ -38,6 +46,12 @@ export const masterStore = createSlice({
       const newState = { ...masterInitialState };
       errorLoadableReducer(newState, action.payload);
       return newState;
+    },
+    loadMasterSuccess: (
+      state: MasterState,
+      { payload }: PayloadAction<Master>
+    ): MasterState => {
+      return { ...state, master: payload };
     },
   },
 });
